@@ -1,18 +1,24 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Cocktails from "./components/Cocktails";
 
 function App() {
   const [cocktails, setCocktails] = useState();
   const [userInput, setUserInput] = useState("martini");
 
-  const fetchCocktails = async (search) => {
-    const res = await fetch(
-      `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
-    );
 
-    const data = await res.json();
-    setCocktails(data);
-    console.log(data);
+  const fetchCocktails = async (search) => {
+    try {
+      const res = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
+      );
+      const data = await res.json();
+      setCocktails(data);
+      console.log(data);
+      console.log(`in try block`);
+    } catch (error) {
+      console.log(`in catch block`);
+    }
   };
 
   useEffect(() => {
@@ -25,29 +31,26 @@ function App() {
 
   return (
     <div className="App">
+      {console.log(`cocktails`)}
+      {console.log(cocktails)}
       <h1> Cocktails& Co </h1>
       <input
         type="text"
         defaultValue={userInput}
         onChange={handleInput}
       ></input>
-      {cocktails &&
-        cocktails.drinks
-          // .filter((drink) => {
-          //   console.log(
-          //     `in filter for ${drink.strDrink}, inputRef is ${userInput}`
-          //   );
-          //   return drink.strDrink.startsWith(userInput);
-          // })
-          .map((drink) => {
-            console.log(`in map for ${drink}`);
-            return (
-              <div className="cocktail">
-                <img className="cocktail__image "src={drink.strDrinkThumb} alt='drink'></img>
-                <p className="cocktail__name "key={drink.idDrink}>drink: {drink.strDrink}</p>
-              </div>
-            );
-          })}
+
+      {/* {cocktails &&
+        cocktails.drinks.map((drink) => {
+          return <Cocktails key={drink.idDrink} drink={drink} />;
+        })} */}
+
+      {/* https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx */}
+      {cocktails
+        ? cocktails.drinks.map((drink) => {
+            return <Cocktails key={drink.idDrink} drink={drink} />;
+          })
+        : null}
     </div>
   );
 }
