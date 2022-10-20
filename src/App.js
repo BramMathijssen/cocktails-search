@@ -13,8 +13,6 @@ function App() {
     const data = await res.json();
     setCocktails(data);
     console.log(data)
-
-    return data;
   };
 
   useEffect(() => {
