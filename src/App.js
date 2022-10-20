@@ -12,7 +12,7 @@ function App() {
 
     const data = await res.json();
     setCocktails(data);
-    console.log(data)
+    console.log(data);
   };
 
   useEffect(() => {
@@ -26,7 +26,11 @@ function App() {
   return (
     <div className="App">
       <h1> Cocktails& Co </h1>
-      <input type="text" defaultValue={userInput} onChange={handleInput}></input>
+      <input
+        type="text"
+        defaultValue={userInput}
+        onChange={handleInput}
+      ></input>
       {cocktails &&
         cocktails.drinks
           // .filter((drink) => {
@@ -38,9 +42,10 @@ function App() {
           .map((drink) => {
             console.log(`in map for ${drink}`);
             return (
-              <p key={drink.idDrink}>
-                 drink: {drink.strDrink}
-              </p>
+              <div className="cocktail">
+                <img className="cocktail__image "src={drink.strDrinkThumb} alt='drink'></img>
+                <p className="cocktail__name "key={drink.idDrink}>drink: {drink.strDrink}</p>
+              </div>
             );
           })}
     </div>

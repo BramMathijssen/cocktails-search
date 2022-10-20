@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.cocktail {
+  display: flex;
+  background-color: grey;
+  margin: 25px;
+  border-radius: 5px;
+}
+
+.cocktail__image {
+  width: 100px;
+  height: auto;
+}
