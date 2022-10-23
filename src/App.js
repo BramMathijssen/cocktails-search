@@ -5,9 +5,11 @@ import Cocktails from "./components/Cocktails";
 function App() {
   const [cocktails, setCocktails] = useState();
   const [userInput, setUserInput] = useState("martini");
-
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
 
   const fetchCocktails = async (search) => {
+    setLoading(true);
     try {
       const res = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`
@@ -18,7 +20,9 @@ function App() {
       console.log(`in try block`);
     } catch (error) {
       console.log(`in catch block`);
+      setError(error);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -31,8 +35,6 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(`cocktails`)}
-      {console.log(cocktails)}
       <h1> Cocktails& Co </h1>
       <input
         type="text"
@@ -46,11 +48,17 @@ function App() {
         })} */}
 
       {/* https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx */}
-      {cocktails
-        ? cocktails.drinks.map((drink) => {
-            return <Cocktails key={drink.idDrink} drink={drink} />;
-          })
-        : null}
+      {console.log(`cocktails data`)}
+      {console.log(cocktails)}
+      {error ? <div>Error: {error}</div> : null}
+      {loading ? <div>Loading...</div> : null}
+      {cocktails ? (
+        cocktails.drinks.map((drink) => {
+          return <Cocktails key={drink.idDrink} drink={drink} />;
+        })
+      ) : (
+        <p>No cocktails found</p>
+      )}
     </div>
   );
 }
