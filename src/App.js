@@ -47,8 +47,6 @@ function App() {
           return <Cocktails key={drink.idDrink} drink={drink} />;
         })} */}
       {/* https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx */}
-      {console.log(`cocktails data`)}
-      {console.log(cocktails)}
       {error ? <div>Error: {error}</div> : null}
       {loading ? <div>Loading...</div> : null}
       {cocktails && cocktails.drinks !== null ? (
