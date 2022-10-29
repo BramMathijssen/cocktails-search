@@ -2,7 +2,7 @@ import "./../App.css";
 import { useEffect, useState } from "react";
 
 const Cocktails = (props) => {
-  console.log(`hey from cocktails`);
+  console.log(`hey from cocktails2`);
   console.log(props);
   return (
     <div className="cocktail">
