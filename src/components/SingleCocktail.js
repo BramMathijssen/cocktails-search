@@ -1,8 +1,7 @@
 import "./../App.css";
-import { useEffect, useState } from "react";
 
-const Cocktails = (props) => {
-  console.log(`hey from cocktails2`);
+const SingleCocktail = (props) => {
+  console.log(`hey from SingleCocktail2`);
   console.log(props);
   return (
     <div className="cocktail">
@@ -18,4 +17,4 @@ const Cocktails = (props) => {
   );
 };
 
-export default Cocktails;
+export default SingleCocktail;

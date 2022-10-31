@@ -1,18 +1,16 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
 const SearchCocktails = (props) => {
-  const [userInput, setUserInput] = useState("martini");
 
   const onChangeHandler = (event) => {
     props.userInputHandler(event.target.value)
-    //setUserInput(event.target.value);
   };
 
   return (
     <Fragment>
       <input
         type="text"
-        defaultValue={userInput}
+        defaultValue={props.defaultValue}
         onChange={onChangeHandler}
       ></input>
     </Fragment>

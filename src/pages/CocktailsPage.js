@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Cocktails from "../components/Cocktails";
 import SearchCocktails from "../components/SearchCocktails";
+import CocktailsList from "../components/CocktailsList";
 
 const CocktailsPage = () => {
   const [cocktails, setCocktails] = useState();
@@ -37,8 +38,10 @@ const CocktailsPage = () => {
   return (
     <div className="App">
       <h1> Cocktails& Co </h1>
-      <SearchCocktails userInputHandler={userInputHandler}/>
-
+      <SearchCocktails
+        userInputHandler={userInputHandler}
+        defaultValue={userInput}
+      />
       {/* {cocktails &&
             cocktails.drinks.map((drink) => {
               return <Cocktails key={drink.idDrink} drink={drink} />;
@@ -46,11 +49,7 @@ const CocktailsPage = () => {
       {/* https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx */}
       {error ? <div>Error: {error}</div> : null}
       {loading ? <div>Loading...</div> : null}
-      {cocktails && cocktails.drinks !== null ? (
-        cocktails.drinks.map((drink) => {
-          return <Cocktails key={drink.idDrink} drink={drink} />;
-        })
-      ) : (
+      {cocktails && cocktails.drinks !== null ? <CocktailsList cocktails={cocktails}/>: (
         <p>No cocktails found</p>
       )}
     </div>

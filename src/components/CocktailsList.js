@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import SingleCocktail from "./SingleCocktail";
 
-const CocktailsList = () => {
+const CocktailsList = (props) => {
   return (
-    <div>CocktailsList</div>
-  )
-}
+    <Fragment>
+      {props.cocktails.drinks.map((drink) => {
+        return <SingleCocktail key={drink.idDrink} drink={drink} />;
+      })}
+    </Fragment>
+  );
+};
 
-export default CocktailsList
+export default CocktailsList;
