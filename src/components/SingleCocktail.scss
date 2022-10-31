@@ -1,0 +1,21 @@
+.cocktail {
+  display: flex;
+  border-radius: 12px;
+  background: #f0f0f0;
+  box-shadow: 13px 13px 20px #cecece, -13px -13px 20px #ffffff;
+  margin: 35px;
+
+  &__content {
+    margin-left: 20px;
+  }
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.cocktail__image {
+  border-radius: 12px 0px 0px 12px;
+  width: 125px;
+  height: auto;
+}

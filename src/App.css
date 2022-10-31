@@ -1,3 +1,9 @@
+body {
+  background-color: #f0f0f0;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
 .App {
   text-align: center;
 }
@@ -35,16 +41,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.cocktail {
-  display: flex;
-  background-color: grey;
-  margin: 25px;
-  border-radius: 5px;
-}
-
-.cocktail__image {
-  width: 100px;
-  height: auto;
 }

@@ -1,4 +1,4 @@
-import "./../App.css";
+import "./SingleCocktail.scss";
 
 const SingleCocktail = (props) => {
   console.log(`hey from SingleCocktail2`);
@@ -10,9 +10,11 @@ const SingleCocktail = (props) => {
         src={props.drink.strDrinkThumb}
         alt="drink"
       ></img>
-      <p className="cocktail__name " key={props.idDrink}>
-        drink: {props.drink.strDrink}
-      </p>
+      <div className="cocktail__content">
+        <p className="cocktail__name " key={props.idDrink}>
+          {props.drink.strDrink}
+        </p>
+      </div>
     </div>
   );
 };
