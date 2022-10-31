@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import Cocktails from "../components/Cocktails";
+import SearchCocktails from "../components/SearchCocktails";
 
 const CocktailsPage = () => {
   const [cocktails, setCocktails] = useState();
@@ -29,18 +30,15 @@ const CocktailsPage = () => {
     fetchCocktails(userInput);
   }, [userInput, fetchCocktails]);
 
-  const handleInput = (event) => {
-    setUserInput(event.target.value);
+  const userInputHandler = (enteredInput) => {
+    setUserInput(enteredInput);
   };
 
   return (
     <div className="App">
       <h1> Cocktails& Co </h1>
-      <input
-        type="text"
-        defaultValue={userInput}
-        onChange={handleInput}
-      ></input>
+      <SearchCocktails userInputHandler={userInputHandler}/>
+
       {/* {cocktails &&
             cocktails.drinks.map((drink) => {
               return <Cocktails key={drink.idDrink} drink={drink} />;
