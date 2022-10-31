@@ -1,0 +1,32 @@
+.searchfield {
+  margin: auto auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 30px;
+  outline: none;
+  padding-left: 49px;
+  box-shadow: -10px -10px 15px #edeff1, 10px 10px 15px #cacfd8;
+  padding: 13px;
+  width: 240px;
+  margin-bottom: 50px;
+
+  &__input {
+    color: rgb(111, 115, 121);
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 17px;
+  }
+
+  &__icon {
+    color: #c0c7d4;
+    background-color: transparent;
+    width: 20px;
+  }
+}
+
+.searchfield:focus {
+  box-shadow: -10px -10px 40px #edeff1, 10px 10px 40px #cacfd8;
+}

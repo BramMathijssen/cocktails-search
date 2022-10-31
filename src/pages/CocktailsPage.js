@@ -36,7 +36,7 @@ const CocktailsPage = () => {
 
   return (
     <div className="App">
-      <h1> Cocktails& Co </h1>
+      <h1 className="title"> Cocktails& Co </h1>
       <SearchCocktails
         userInputHandler={userInputHandler}
         defaultValue={userInput}
