@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import Cocktails from "../components/Cocktails";
 import SearchCocktails from "../components/SearchCocktails";
 import CocktailsList from "../components/CocktailsList";
 
