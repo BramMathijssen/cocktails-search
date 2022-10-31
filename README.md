@@ -11,3 +11,7 @@ This project uses the API from https://www.thecocktaildb.com/api.php
   https://medium.com/codex/handling-loading-and-error-state-in-react-application-and-clean-state-mess-b3cbf28029fd
 
 
+## Design Choices
+
+- ### HTTP requests handled in the page components
+  following the Quotes project: https://codesandbox.io/s/13-2-quotes-app-react-router-v6-3wkobt?file=/src/pages/AllQuotes.js 
