@@ -3,8 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 const CocktailDetailsPage = () => {
-  const [cocktails, setCocktails] = useState();
-  const [userInput, setUserInput] = useState("martini");
+  const [cocktail, setCocktail] = useState();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const params = useParams();
@@ -14,25 +13,31 @@ const CocktailDetailsPage = () => {
     setError(null);
     try {
       const res = await fetch(
-        `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${params}`
+        `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
       );
       const data = await res.json();
-      setCocktails(data);
-      console.log(data);
+      setCocktail(data.drinks[0]);
     } catch (error) {
+      console.log(error);
       setError(error);
     }
     setLoading(false);
   }, []);
 
   useEffect(() => {
-    fetchCocktailById(userInput);
-  }, [userInput, fetchCocktailById]);
+    fetchCocktailById(params.cocktailId);
+  }, [params, fetchCocktailById]);
 
   return (
     <div>
+      {console.dir(cocktail)}
       <p>This is the details page</p>
       <p>Details page for cocktail with Id {`${params.cocktailId}`}</p>
+      {cocktail && cocktail !== null ? (
+        <p>{cocktail.strInstructions}</p>
+      ) : (
+        <p>No cocktails found</p>
+      )}
     </div>
   );
 };

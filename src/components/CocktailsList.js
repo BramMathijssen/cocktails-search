@@ -7,7 +7,7 @@ const CocktailsList = (props) => {
     <Fragment>
       {props.cocktails.drinks.map((drink) => {
         return (
-          <NavLink to={`/cocktails/${drink.idDrink}`}>
+          <NavLink key={drink.idDrink} to={`/cocktails/${drink.idDrink}`}>
             <SingleCocktail key={drink.idDrink} drink={drink} />
           </NavLink>
         );
