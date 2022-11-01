@@ -17,10 +17,7 @@ const CocktailsPage = () => {
       );
       const data = await res.json();
       setCocktails(data);
-      console.log(data);
-      console.log(`in try block`);
     } catch (error) {
-      console.log(`in catch block`);
       setError(error);
     }
     setLoading(false);
@@ -36,7 +33,7 @@ const CocktailsPage = () => {
 
   return (
     <div className="App">
-      <h1 className="title"> Cocktails& Co </h1>
+      <h1 className="title"> Cocktails & Co </h1>
       <SearchCocktails
         userInputHandler={userInputHandler}
         defaultValue={userInput}
@@ -48,7 +45,9 @@ const CocktailsPage = () => {
       {/* https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx */}
       {error ? <div>Error: {error}</div> : null}
       {loading ? <div>Loading...</div> : null}
-      {cocktails && cocktails.drinks !== null ? <CocktailsList cocktails={cocktails}/>: (
+      {cocktails && cocktails.drinks !== null ? (
+        <CocktailsList cocktails={cocktails} />
+      ) : (
         <p>No cocktails found</p>
       )}
     </div>
