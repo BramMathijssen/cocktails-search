@@ -29,25 +29,13 @@ const CocktailDetailsPage = () => {
     fetchCocktailById(params.cocktailId);
   }, [params, fetchCocktailById]);
 
-  //https://masteringjs.io/tutorials/fundamentals/filter-key
-  const getIngredients = () => {
-    if (cocktail) {
-      const ings = Object.fromEntries(
-        Object.entries(cocktail).filter(([key]) =>
-          key.includes("strIngredient")
-        )
-      );
-      console.log(ings);
-      //return ings;
-    }
 
-  };
 
   return (
     <div>
       {console.dir(cocktail)}
       <p>This is the details page</p>
-      <p>{getIngredients()}</p>
+
       <p>Details page for cocktail with Id {`${params.cocktailId}`}</p>
       {cocktail && cocktail !== null ? (
         <CocktailDetails cocktail={cocktail} />

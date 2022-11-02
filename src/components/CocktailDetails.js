@@ -1,6 +1,25 @@
 import React from "react";
 
 const CocktailDetails = ({ cocktail }) => {
+  //https://masteringjs.io/tutorials/fundamentals/filter-key
+  const getIngredients = () => {
+    if (cocktail) {
+      // Takes all ingredient fields which are not null from the cocktails object and returns them as an array
+      const ingredientsArr = Object.entries(cocktail).filter(
+        ([key, value]) => key.includes("strIngredient") && value !== null
+      );
+
+      // flattens the array structure and only takes the uneven indexes (1,3,5,7, etc..), which are the ingredients
+      const flatIngredientsArr = ingredientsArr.flat().filter((val, index) => {
+        return index % 2 !== 0;
+      });
+
+      return flatIngredientsArr;
+    }
+  };
+
+  const ingredients = getIngredients();
+
   return (
     <div className="cocktail-detail">
       <div className="cocktail-detail__image">
@@ -10,13 +29,10 @@ const CocktailDetails = ({ cocktail }) => {
       <p>Type: {cocktail.strAlcoholic}</p>
       <p>Instructions: {cocktail.strInstructions}</p>
       <p>Ingredients</p>
-
       <ul>
-        <li>{cocktail.strIngredient1}</li>
-        <li>{cocktail.strIngredient2}</li>
-        <li>{cocktail.strIngredient3}</li>
-        <li>{cocktail.strIngredient4}</li>
-        <li>{cocktail.strIngredient5}</li>
+        {ingredients.map((val) => (
+          <li>{val}</li>
+        ))}
       </ul>
     </div>
   );
