@@ -29,11 +29,8 @@ const CocktailDetailsPage = () => {
     fetchCocktailById(params.cocktailId);
   }, [params, fetchCocktailById]);
 
-
-
   return (
     <div>
-      {console.dir(cocktail)}
       <p>This is the details page</p>
 
       <p>Details page for cocktail with Id {`${params.cocktailId}`}</p>
