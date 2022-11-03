@@ -31,9 +31,6 @@ const CocktailDetailsPage = () => {
 
   return (
     <div>
-      <p>This is the details page</p>
-
-      <p>Details page for cocktail with Id {`${params.cocktailId}`}</p>
       {cocktail && cocktail !== null ? (
         <CocktailDetails cocktail={cocktail} />
       ) : (
