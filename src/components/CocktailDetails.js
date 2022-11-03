@@ -34,7 +34,6 @@ const CocktailDetails = ({ cocktail }) => {
         <div className="content">
           <h2 className="content__title">{cocktail.strDrink}</h2>
           <CocktailType className="content__" type={cocktail.strAlcoholic} />
-          <p className="content__type">{cocktail.strAlcoholic}</p>
           <p className="content__instructions">
             Instructions: {cocktail.strInstructions}
           </p>
