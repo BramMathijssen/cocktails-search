@@ -3,7 +3,6 @@ import "./CocktailType.scss";
 
 const CocktailType = (props) => {
   const [alcohol, setAlcohol] = useState(true);
-  console.log(props);
 
   const setType = useCallback(() => {
     if (props.type.includes("Non")) {
@@ -17,7 +16,7 @@ const CocktailType = (props) => {
 
   return (
     <Fragment>
-      <p className={`type ${alcohol ? "alcoholic" : "non-alcoholic"}`}>
+      <p className={`${props.className} type ${alcohol ? "alcoholic" : "non-alcoholic"}`}>
         {props.type}
       </p>
     </Fragment>

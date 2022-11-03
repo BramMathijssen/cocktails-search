@@ -5,6 +5,7 @@
   width: max-content;
   border-radius: 5px;
   color: white;
+  
 }
 
 .type.alcoholic {
@@ -13,4 +14,11 @@
 
 .type.non-alcoholic {
   background-color: green;
+}
+
+.content{
+
+    &__type.alcoholic{
+
+    }
 }

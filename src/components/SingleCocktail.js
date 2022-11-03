@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CocktailType from "./CocktailType";
 import "./SingleCocktail.scss";
 
@@ -6,17 +7,27 @@ const SingleCocktail = (props) => {
   console.log(props);
   return (
     <div className="cocktail">
-      <img
-        className="cocktail__image "
-        src={props.drink.strDrinkThumb}
-        alt="drink"
-      ></img>
-      <div className="cocktail__content">
-        <p className="cocktail__name " key={props.idDrink}>
-          {props.drink.strDrink}
-        </p>
-        <CocktailType type={props.drink.strAlcoholic} />
-      </div>
+      <NavLink
+        key={props.drink.idDrink}
+        to={`/cocktails/${props.drink.idDrink}`}
+      >
+        <div className="cocktail__container">
+          <img
+            className="cocktail__image "
+            src={props.drink.strDrinkThumb}
+            alt="drink"
+          ></img>
+          <div className="cocktail__content">
+            <p className="cocktail__name " key={props.idDrink}>
+              {props.drink.strDrink}
+            </p>
+            <CocktailType
+              className={"cocktail__type"}
+              type={props.drink.strAlcoholic}
+            />
+          </div>
+        </div>
+      </NavLink>
     </div>
   );
 };

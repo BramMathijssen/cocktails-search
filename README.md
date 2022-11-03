@@ -22,3 +22,6 @@ This project uses the API from https://www.thecocktaildb.com/api.php
 
 - ### Lifting State up
   Lifting the state up from the SearchCocktails component to the Cocktails component
+
+- ### Passing ClassName as a prop
+  Passed the className as a prop to CocktailType so the CocktailType can be dynamically styled based on which components implements it

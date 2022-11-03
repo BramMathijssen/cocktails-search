@@ -6,11 +6,7 @@ const CocktailsList = (props) => {
   return (
     <Fragment>
       {props.cocktails.drinks.map((drink) => {
-        return (
-          <NavLink key={drink.idDrink} to={`/cocktails/${drink.idDrink}`}>
-            <SingleCocktail key={drink.idDrink} drink={drink} />
-          </NavLink>
-        );
+        return <SingleCocktail key={drink.idDrink} drink={drink} />;
       })}
     </Fragment>
   );
