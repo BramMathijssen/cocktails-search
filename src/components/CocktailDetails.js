@@ -1,6 +1,7 @@
 import React from "react";
 import "./CocktailDetails.scss";
 import { useNavigate } from "react-router-dom";
+import CocktailType from "./CocktailType";
 
 const CocktailDetails = ({ cocktail }) => {
   const navigate = useNavigate();
@@ -32,7 +33,8 @@ const CocktailDetails = ({ cocktail }) => {
       <div className="cocktail-details__content">
         <div className="content">
           <h2 className="content__title">{cocktail.strDrink}</h2>
-            <p className="content__type">{cocktail.strAlcoholic}</p>
+          <CocktailType type={cocktail.strAlcoholic} />
+          <p className="content__type">{cocktail.strAlcoholic}</p>
           <p className="content__instructions">
             Instructions: {cocktail.strInstructions}
           </p>

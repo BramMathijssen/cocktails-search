@@ -1,0 +1,16 @@
+.type {
+  padding: 5px;
+  background-color: blue;
+  border: 1px solid black;
+  width: max-content;
+  border-radius: 5px;
+  color: white;
+}
+
+.type.alcoholic {
+  background-color: orangered;
+}
+
+.type.non-alcoholic {
+  background-color: green;
+}

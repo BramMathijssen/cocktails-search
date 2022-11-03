@@ -1,3 +1,4 @@
+import CocktailType from "./CocktailType";
 import "./SingleCocktail.scss";
 
 const SingleCocktail = (props) => {
@@ -14,6 +15,7 @@ const SingleCocktail = (props) => {
         <p className="cocktail__name " key={props.idDrink}>
           {props.drink.strDrink}
         </p>
+        <CocktailType type={props.drink.strAlcoholic} />
       </div>
     </div>
   );
