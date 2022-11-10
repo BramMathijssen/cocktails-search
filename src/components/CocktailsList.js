@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { NavLink } from "react-router-dom";
 import SingleCocktail from "./SingleCocktail";
 
 const CocktailsList = (props) => {
