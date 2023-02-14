@@ -1,6 +1,22 @@
 # Cocktails Search engine
 
-This project uses the API from https://www.thecocktaildb.com/api.php
+![](https://github.com/BramMathijssen/cocktails-search/blob/master/public/cocktails.gif)
+
+## Description
+
+This project uses the API from https://www.thecocktaildb.com/api.php to create an cocktails search engine.
+Cocktails can be entered in the search bar and all matching results will appear including if they are alcoholic or not.
+When the result is pressed a detailed view of the cocktail is presented with all the ingredients and instructions on how to prepare it.
+
+
+## Technologies
+- React
+- React Router v6
+- SASS
+
+## How to install and run the app
+`npm install`
+`npm start`
 
 ## Using Best practices
 
