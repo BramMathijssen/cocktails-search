@@ -15,8 +15,8 @@ When the result is pressed a detailed view of the cocktail is presented with all
 - SASS
 
 ## How to install and run the app
-`npm install`
-`npm start`
+1. `npm install`
+2. `npm start`
 
 ## Using Best practices
 
